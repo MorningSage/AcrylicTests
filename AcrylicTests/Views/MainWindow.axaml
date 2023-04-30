@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AcrylicTests.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:AcrylicTests.Views"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        Width="800" Height="450"
+        x:Class="AcrylicTests.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AcrylicTests"
+        Background="{x:Null}"
+        TransparencyLevelHint="AcrylicBlur"
+        ExtendClientAreaToDecorationsHint="True"
+        SystemDecorations="Full"
+        WindowStartupLocation="CenterScreen"
+        >
+        
+        <Panel>
+                <ExperimentalAcrylicBorder Name="AcrylicBorder" IsHitTestVisible="False" IsVisible="True">
+                        <ExperimentalAcrylicBorder.Material>
+                                <ExperimentalAcrylicMaterial BackgroundSource="Digger"
+                                                             TintColor="Black"
+                                                             TintOpacity="1"
+                                                             FallbackColor="Black"
+                                                             MaterialOpacity="0.8" /> <!-- The lower this number, the lighter it gets. -->
+                        </ExperimentalAcrylicBorder.Material>
+                </ExperimentalAcrylicBorder>
+
+                <views:MainView />
+
+        
+                <!--{DynamicResource AcrylicColor}-->
+        </Panel>
+        
+</Window>
